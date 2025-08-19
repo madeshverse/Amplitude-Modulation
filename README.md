@@ -76,11 +76,40 @@ Compare the original modulating signal with the demodulated signal. PROCEDURE
 
 Program
 
+Am = 2.54;
 
+fm=454;
+
+Ac = 4;
+
+fc=3120;
+
+fs=31200;
+
+t=0:1/fs:2/fm;
+
+m=Am*cos(2*3.14*fm*t);
+
+subplot(3,1,1);
+
+plot(t,m);
+
+c=Ac*cos(2*3.14*fc*t);
+
+subplot(3,1,2);
+
+plot(t,c);
+
+s=(Ac+m).*cos(2*3.14*fc*t);
+
+subplot(3,1,3);
+
+plot(t,s);
 
 Output Waveform
 
 
+<img width="610" height="460" alt="image" src="https://github.com/user-attachments/assets/acd82e53-2913-48be-b1ba-8b93ae52ac4e" />
 
 
 
@@ -89,8 +118,8 @@ TABULATION:
 
 
 Calculation
-1.	ma (Theory) = am/ac =
-2.	ma(Practical) = (Emax-Emin)/(Emax+Emin) =
+1.	ma (Theory) = am/ac =0.5
+2.	ma(Practical) = (Emax-Emin)/(Emax+Emin) =0.5
 
 
 MODEL GRAPH
